@@ -11,6 +11,10 @@ const btnRock = document.querySelector("#btn1");
 const btnPaper = document.querySelector("#btn2");
 const btnScissors = document.querySelector("#btn3");
 
+const playerHealth = document.querySelector(".pcHealth");
+const pcHealth = document.querySelector(".playerHealth");
+
+
 const winner = document.querySelector("#announceWinner");
 
 
@@ -30,7 +34,11 @@ function playRound(item){
     }else{
         return playerWinsRound++;
     }
+
 }
+
+
+
 
 
 function resetScores() {
@@ -40,6 +48,8 @@ function resetScores() {
     playerScore.textContent = playerWinsRound;
     pcScore.textContent = computerWinsRound;
     tieScore.textContent = tieRound;
+    playerHealth.value = MAX_HEALTH;
+    pcHealth.value = MAX_HEALTH;
 }
 
 function updateScores() {
@@ -47,12 +57,13 @@ function updateScores() {
     pcScore.textContent = computerWinsRound;
     tieScore.textContent = tieRound;
 }
-
 function winnerAndNewRound() {
     if (playerWinsRound === 5) {
+        winner.setAttribute("style","color : green")
         winner.textContent = "Player";
         resetScores();
     } else if (computerWinsRound === 5) {
+        winner.setAttribute("style","color : red")
         winner.textContent = "Computer";
         resetScores();
     }
@@ -60,18 +71,21 @@ function winnerAndNewRound() {
 
 btnRock.addEventListener("click", () => {
     playRound("ROCK");
+    healthBar();
     updateScores();
     winnerAndNewRound();
 });
 
 btnPaper.addEventListener("click", () => {
     playRound("PAPER");
+    healthBar();
     updateScores();
     winnerAndNewRound();
 });
 
 btnScissors.addEventListener("click", () => {
     playRound("SCISSORS");
+    healthBar();
     updateScores();
     winnerAndNewRound();
 });
@@ -92,4 +106,13 @@ function getComputerChoice(){
     }
 }
 
+const MAX_HEALTH = 5;
 
+function healthBar() {
+    let playerHealthBar = playerHealth;
+    let pcHealthBar = pcHealth;
+
+    // Set the value of the progress bars by subtracting from the maximum health
+    playerHealthBar.value = MAX_HEALTH - playerWinsRound;
+    pcHealthBar.value = MAX_HEALTH - computerWinsRound;
+}

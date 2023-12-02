@@ -24,15 +24,32 @@
         >
     </header>
 <div class="main">
+    <div class="heroes">
+        <div class="playerHero">
+        <p>Player</p>
+        <progress  value="5" max="5" class="playerHealth"></progress>
+        <img src="mage.png" alt=""
+        class="mage"
+        width="175px"
+        height="175px">
+        </div> 
+        <div class="pcHero">
+        <p>Alchemist</p>
+        <progress  value="5" max="5" class="pcHealth"></progress>
+        <img src="alchemist.png" alt=""
+        class="pc"
+        width="180px"
+        height="175px">
+        </div>
+    </div>
+
     <div class="buttons">
     <button  class="btn fire" id="btn1">FIRE</button>
     <button  class="btn water" id="btn2">WATER</button>
     <button  class="btn stone" id="btn3">STONE</button>
     </div>
-    <div>
+    <div class="results">
         <p id="winner">Winner is: <span id="announceWinner"></span></p>
-    </div>
-    <div>
         <p id="player">Your score: <span id="scorePlayer">0</span></p>
         <p id="pc">PC score: <span id="scorePc">0</span></p>
         <p id="tie">Tie score: <span id="scoreTie">0</span></p>

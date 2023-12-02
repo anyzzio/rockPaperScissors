@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: "Press Start 2P";
     color:#7E7474;
+    overflow-y: hidden
 }
 
 body{
@@ -14,7 +15,6 @@ body{
 
 header{
     display:flex;
-    margin-top: 40px;
     border-bottom: 2px solid grey;
     align-items: center;
 }
@@ -28,6 +28,8 @@ header h1{
     text-align: center;
     margin: auto;
 }
+
+
 
 img{
     margin-bottom:40px;
@@ -63,14 +65,14 @@ img{
 .buttons{
     display:flex;
     justify-content: space-evenly;
-    margin-top:400px;
+    margin-top:75px;
 }
 
 .buttons .btn{
     font-size: 20px;
     background-color: #000000;
     border:2px solid #7E7474;
-    padding:20px;
+    padding:15px;
 }
 
 .fire,.water,.stone{
@@ -91,4 +93,62 @@ img{
 .stone:hover{
     color:#323232;
     border-color:#553b2e;
+}
+
+
+progress{
+    border:2px solid #7E7474;
+    padding: 5px;
+}
+
+.heroes{
+    display: flex;
+    justify-content: center;
+    gap:350px;
+    padding-top:50px;
+    align-items: center;
+}
+
+.playerHero{
+    display:flex;
+    flex-direction: column;
+}
+
+.pcHero{
+    display:flex;
+    flex-direction: column;
+}
+
+.mage{
+    transform: translatey(5px);
+	animation: float 9s ease-in-out infinite;
+}
+
+.pc{
+    transform: translatey(5px);
+	animation: float 9s ease-in-out infinite;
+}
+
+.results{
+    margin-top: 50px;
+    padding: 5px;
+    padding-left: 0;
+}
+.results p{
+    padding-top:15px;
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
 }
