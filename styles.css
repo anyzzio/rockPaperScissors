@@ -1,0 +1,94 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Press Start 2P";
+    color:#7E7474;
+}
+
+body{
+    background-color: #000000;
+    width:100%;
+    height:100vh;
+}
+
+header{
+    display:flex;
+    margin-top: 40px;
+    border-bottom: 2px solid grey;
+    align-items: center;
+}
+
+header h1{
+    justify-self: center;
+    font-size: 45px;
+    color:#7E7474;
+    letter-spacing:15px;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+}
+
+img{
+    margin-bottom:40px;
+}
+
+.imgleft{
+    margin-right:40px;
+    filter:drop-shadow(0px 0px 20px #FDF7E4);
+    animation: lanternAnimation 4s linear infinite alternate;
+}
+
+.imgright{
+    margin-left:40px;
+    filter:drop-shadow(0px 0px 20px #FDF7E4);
+    animation: lanternAnimation 4s linear infinite alternate;
+}
+
+@keyframes lanternAnimation {
+    0% {
+        filter: drop-shadow(0px 0px 20px #FDF7E4);
+    }
+    100% {
+        filter: drop-shadow(0px 0px 30px #FDF7E4);
+    }
+}
+
+
+.main{
+    display:flex;
+    flex-direction: column;
+}
+
+.buttons{
+    display:flex;
+    justify-content: space-evenly;
+    margin-top:400px;
+}
+
+.buttons .btn{
+    font-size: 20px;
+    background-color: #000000;
+    border:2px solid #7E7474;
+    padding:20px;
+}
+
+.fire,.water,.stone{
+    transition: color 2s ease;
+    transition: border 0.4s ease;
+}
+
+.fire:hover{
+    color:#7D0633;
+    border-color: #C87941;
+}
+
+.water:hover{
+    color:#133B5C;
+    border-color: #0C7B93;
+}
+
+.stone:hover{
+    color:#323232;
+    border-color:#553b2e;
+}
